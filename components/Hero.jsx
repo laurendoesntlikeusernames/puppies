@@ -52,6 +52,7 @@ const Hero = () => {
                 width={500}
                 height={400}
                 src={Dog}
+                alt="Perth Puppy Logo"
             />
         </Flex>
       </Stack>

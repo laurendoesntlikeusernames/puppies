@@ -1,17 +1,17 @@
 import React from 'react'
-import {Flex, Heading, Input, Button, useColorMode, useColorModeValue } from '@chakra-ui/react'
+import {StackDivider, VStack} from '@chakra-ui/react'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
-import Image from 'next/image'
-import dog from '../public/logo.png'
 
 
 export default function Index() {
   return (
-    <Flex>
+    <VStack   divider={<StackDivider borderColor='gray.200' />}
+    spacing={4}
+    align='stretch'>
       <Header />
       <Hero />
-    </Flex>      
+    </VStack>     
   )
 }
  
