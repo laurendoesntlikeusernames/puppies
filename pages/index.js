@@ -6,9 +6,7 @@ import Hero from '../components/Hero'
 
 export default function Index() {
   return (
-    <VStack   divider={<StackDivider borderColor='gray.200' />}
-    spacing={4}
-    align='stretch'>
+    <VStack   divider={<StackDivider borderColor='gray.000' />} spacing={4} align='stretch'>
       <Header />
       <Hero />
     </VStack>     
