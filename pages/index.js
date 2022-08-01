@@ -7,14 +7,11 @@ import dog from '../public/logo.png'
 
 
 export default function Index() {
-  const {toggleColorMode} = useColorMode()
-  const formBackground = useColorModeValue("gray.200", "gray.600") 
   return (
-      <>
-    <Header />
+    <Flex>
+      <Header />
       <Hero />
-    
-      </>
+    </Flex>      
   )
 }
  
