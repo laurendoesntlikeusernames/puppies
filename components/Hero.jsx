@@ -8,7 +8,6 @@ import {
     Stack,
     Text,
     Button,
-    Center
 
   } from '@chakra-ui/react';
 
