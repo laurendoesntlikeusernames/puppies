@@ -1,11 +1,12 @@
 import React from 'react'
-import Script from 'next/script'
 import {
   Flex,
   Container,
   Heading,
   Stack,
+  VStack,
   Text,
+  Box,
   Button,
 
 } from '@chakra-ui/react';
@@ -28,9 +29,19 @@ const Started = () => {
           </Text>
           </Heading>
           <Flex minWidth='max-content' alignItems='center'>
-          <Script type="text/javascript" src="https://form.jotform.com/jsform/222218832403852" />
-          </Flex>  
+          </Flex> 
         </Stack>
+        <VStack spacing='24px'>
+          <Box w='500px' h='40px' bg='yellow.200'>
+            1
+          </Box>
+          <Box w='500px' h='40px' bg='tomato'>
+            2
+          </Box>
+          <Box w='500px' h='40px' bg='pink.100'>
+            3
+          </Box>
+        </VStack>
     </Container>
   )
 }
