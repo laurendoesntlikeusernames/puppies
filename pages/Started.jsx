@@ -1,4 +1,5 @@
 import React from 'react'
+import ClientForm from '../components/ClientForm'
 import {
   Flex,
   Container,
@@ -29,19 +30,23 @@ const Started = () => {
           </Text>
           </Heading>
           <Flex minWidth='max-content' alignItems='center'>
+            <VStack spacing='24px'>
+
+              <ClientForm />
+
+              <Box w='500px' h='40px' bg='yellow.200'>
+                
+              </Box>
+              <Box w='500px' h='40px' bg='tomato'>
+                
+              </Box>
+              <Box w='500px' h='40px' bg='pink.100'>
+          
+              </Box>
+             
+            </VStack>
           </Flex> 
         </Stack>
-        <VStack spacing='24px'>
-          <Box w='500px' h='40px' bg='yellow.200'>
-            1
-          </Box>
-          <Box w='500px' h='40px' bg='tomato'>
-            2
-          </Box>
-          <Box w='500px' h='40px' bg='pink.100'>
-            3
-          </Box>
-        </VStack>
     </Container>
   )
 }
