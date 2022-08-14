@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import Dog from '../public/puppy.svg'
 import {
     Flex,
@@ -29,22 +30,24 @@ const Hero = () => {
           </Text>
         </Heading>
         <Text color={'gray.500'} maxW={'3xl'}>
-          Never miss a meeting. Never be late for one too. Keep track of your
-          meetings and receive smart reminders in appropriate times. Read your
-          smart “Daily Agenda” every morning.
+        It’s holiday time!! I’m so excited, I finally get to go away and have some much needed relaxation! But wait. What do I do with the pets? Who’s going to look after them with as much care and love as I do?
         </Text>
         <Stack spacing={6} direction={'row'}>
-          <Button
+         <Link href="/Started">
+         <Button
             rounded={'full'}
             px={6}
             colorScheme={'orange'}
             bg={'orange.400'}
             _hover={{ bg: 'orange.500' }}>
             Get started
-          </Button>
-          <Button rounded={'full'} px={6}>
-            Learn more
-          </Button>
+          </Button >
+         </Link>
+          <Link href="/Learn">
+            <Button rounded={'full'} px={6}>
+              Learn more
+            </Button>
+          </Link>
         </Stack>
         <Flex minWidth='max-content' alignItems='center'>
         <Image
