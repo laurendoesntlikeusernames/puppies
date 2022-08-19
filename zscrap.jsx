@@ -1,8 +1,11 @@
-<VStack spacing={4} align='stretch' width='100vh'>
-<Container centerContent bg='red.400'>
-  <Header />
-</Container>
-<Container centerContent bg='blue.400'>
-  <Hero />
-</Container>
-</VStack>  
+<form onSubmit={formik.handleSubmit}>
+<label htmlFor='email'>Email Address</label>
+<Input
+  id='email'
+  name='email'
+  type='email'
+  onChange={formik.handleChange}
+  value={formik.values.email} />
+
+<Button type='submit'>Submit</Button>
+</form>

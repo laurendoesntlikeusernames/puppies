@@ -30,21 +30,12 @@ const ClientForm = () => {
   }) 
   const [showPassword, setShowPassword] = useState(false); 
   return (
-    <>
     <form onSubmit={formik.handleSubmit}>
-      <label htmlFor='email'>Email Address</label>
-      <Input
-        id='email'
-        name='email'
-        type='email'
-        onChange={formik.handleChange}
-        value={formik.values.email} />
 
-      <Button type='submit'>Submit</Button>
-    </form><Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
+    <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
           <Heading fontSize={'4xl'} textAlign={'center'}>
-            Sign up
+            Client Request Form
           </Heading>
           <Text fontSize={'lg'} color={'gray.600'}>
             to enjoy all of our cool features ✌️
@@ -70,10 +61,19 @@ const ClientForm = () => {
                 </FormControl>
               </Box>
             </HStack>
-            <FormControl id="email" isRequired>
+
+            <FormControl 
+            isRequired
+            id='email'
+            name='email'
+            type='email'
+            onChange={formik.handleChange}
+            value={formik.values.email}
+            >
               <FormLabel>Email address</FormLabel>
               <Input type="email" />
             </FormControl>
+
             <FormControl id="password" isRequired>
               <FormLabel>Password</FormLabel>
               <InputGroup>
@@ -88,6 +88,7 @@ const ClientForm = () => {
               </InputGroup>
             </FormControl>
             <Stack spacing={10} pt={2}>
+              
               <Button
                 loadingText="Submitting"
                 size="lg"
@@ -95,9 +96,12 @@ const ClientForm = () => {
                 color={'white'}
                 _hover={{
                   bg: 'blue.500',
-                }}>
-                Sign up
+                }}
+                type='submit'
+                >
+                Submit
               </Button>
+            
             </Stack>
             <Stack pt={6}>
               <Text align={'center'}>
@@ -106,7 +110,9 @@ const ClientForm = () => {
             </Stack>
           </Stack>
         </Box>
-      </Stack></>
+      </Stack>
+
+    </form>
     
   )
 }
