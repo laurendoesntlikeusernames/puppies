@@ -10,13 +10,13 @@ import {
   Box,
   Button,
 } from '@chakra-ui/react';
-import Header from '../components/Header'
+import NavBar from '../components/NavBar.tsx'
 
 
 const Started = () => {
   return (
     <>
-    <Header />
+    <NavBar />
     <ClientForm />
     </>
   )
