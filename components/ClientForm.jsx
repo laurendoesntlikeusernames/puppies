@@ -32,7 +32,7 @@ const ClientForm = () => {
         <Stack align={'center'}>
         <Heading noOfLines={2}
             fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+            fontSize={'2xl'}
             lineHeight={'110%'}
             textAlign="center">
             Send us an Initial <br />
