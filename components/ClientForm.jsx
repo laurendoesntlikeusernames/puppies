@@ -83,7 +83,7 @@ const ClientForm = () => {
                 <FormControl id="petName" isRequired
                   onChange={formik.handleChange}
                   value={formik.values.lastName}>
-                  <FormLabel>Pet's Name</FormLabel>
+                  <FormLabel>Fur Baby Name</FormLabel>
                   <Input type="text" />
                 </FormControl>
               </Box>
