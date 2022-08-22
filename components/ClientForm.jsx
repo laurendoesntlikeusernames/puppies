@@ -36,7 +36,7 @@ const ClientForm = () => {
             lineHeight={'110%'}
             textAlign="center">
             Send us an Initial <br />
-            <Text as={'span'} color={'green.400'} >
+            <Text as={'span'} color={'green.500'} >
               Enquiry
             </Text>
         </Heading>
