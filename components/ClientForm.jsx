@@ -35,16 +35,20 @@ const ClientForm = () => {
 
     <Stack spacing={8} mx={'auto'} maxW={'3xl'} py={12} px={6}>
         <Stack align={'center'}>
-          <Heading fontSize={'4xl'} textAlign={'center'}>
-            How can we help you today?
-          </Heading>
-          <Text fontSize={'lg'} color={'gray.600'}>
-            Initial client request form? 🐕
-          </Text>
+        <Heading noOfLines={2}
+            fontWeight={600}
+            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+            lineHeight={'110%'}
+            textAlign="center">
+            Send us an Initial <br />
+            <Text as={'span'} color={'green.400'} >
+              Enquiry
+            </Text>
+        </Heading>
         </Stack>
         <Box
           rounded={'lg'}
-          bg={useColorModeValue('white', 'gray.700')}
+          bg={useColorModeValue('white', 'gray.500')}
           boxShadow={'lg'}
           p={8}>
           <Stack spacing={4}>
