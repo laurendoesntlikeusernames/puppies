@@ -261,7 +261,7 @@ import {
       href: '/Learn',
     },
     {
-      label: 'Services',
+      label: 'Get Started',
       href: '/Started',
     },
 
