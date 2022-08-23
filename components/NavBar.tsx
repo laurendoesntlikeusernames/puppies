@@ -1,7 +1,9 @@
+import React from 'react';
 import {
     Box,
     Flex,
     Text,
+    Image,
     IconButton,
     Button,
     Stack,
@@ -12,17 +14,18 @@ import {
     PopoverTrigger,
     PopoverContent,
     useColorModeValue,
-    useBreakpointValue,
+    Center,
+    Avatar,
     useDisclosure,
-  } from '@chakra-ui/react';
+  } from '@chakra-ui/react'
   import {
     HamburgerIcon,
     CloseIcon,
     ChevronDownIcon,
     ChevronRightIcon,
-  } from '@chakra-ui/icons';
+  } from '@chakra-ui/icons'
   
-  export default function WithSubnavigation() {
+  export default function NavBar() {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
@@ -37,6 +40,7 @@ import {
           borderStyle={'solid'}
           borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}>
+          
           <Flex
             flex={{ base: 1, md: 'auto' }}
             ml={{ base: -2 }}
@@ -44,20 +48,20 @@ import {
             <IconButton
               onClick={onToggle}
               icon={
-                isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={7} h={7} />
               }
               variant={'ghost'}
               aria-label={'Toggle Navigation'}
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Text
-              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-              fontFamily={'heading'}
-              color={useColorModeValue('gray.800', 'white')}>
-              Logo
-            </Text>
-  
+            <Center>
+              <Image
+                boxSize='35px'
+                objectFit='cover'
+                src={'chihuahua200x200T.png'}
+              />
+            </Center>
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>

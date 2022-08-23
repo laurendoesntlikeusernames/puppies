@@ -43,7 +43,7 @@ const ClientForm = () => {
         </Stack>
         <Box
           rounded={'lg'}
-          bg={useColorModeValue('white', 'gray.500')}
+          bg={useColorModeValue('white', 'gray.800')}
           boxShadow={'lg'}
           p={8}>
           <Stack spacing={4}>
@@ -96,10 +96,10 @@ const ClientForm = () => {
               <Button
                   loadingText="Submitting"
                   size="md"
-                  bg={'blue.400'}
+                  bg={'purple.400'}
                   color={'white'}
                   _hover={{
-                    bg: 'blue.500',
+                    bg: 'purple.500',
                   }}
                   type='submit'
                   >
