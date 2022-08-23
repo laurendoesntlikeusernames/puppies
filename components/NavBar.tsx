@@ -15,7 +15,6 @@ import {
     PopoverContent,
     useColorModeValue,
     Center,
-    Avatar,
     useDisclosure,
   } from '@chakra-ui/react'
   import {
@@ -48,7 +47,7 @@ import {
             <IconButton
               onClick={onToggle}
               icon={
-                isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={7} h={7} />
+                isOpen ? <CloseIcon w={5} h={5} /> : <HamburgerIcon w={7} h={7} />
               }
               variant={'ghost'}
               aria-label={'Toggle Navigation'}
@@ -86,7 +85,6 @@ import {
               fontWeight={600}
               color={'white'}
               bg={'pink.400'}
-              href={'#'}
               _hover={{
                 bg: 'pink.300',
               }}>
@@ -255,41 +253,17 @@ import {
   
   const NAV_ITEMS: Array<NavItem> = [
     {
-      label: 'Inspiration',
+      label: 'Home',
       children: [
-        {
-          label: 'Explore Design Work',
-          subLabel: 'Trending Design to inspire you',
-          href: '#',
-        },
-        {
-          label: 'New & Noteworthy',
-          subLabel: 'Up-and-coming Designers',
-          href: '#',
-        },
+        // {label: '', subLabel: '', href: '#',},
       ],
     },
     {
-      label: 'Find Work',
-      children: [
-        {
-          label: 'Job Board',
-          subLabel: 'Find your dream design job',
-          href: '#',
-        },
-        {
-          label: 'Freelance Projects',
-          subLabel: 'An exclusive list for contract work',
-          href: '#',
-        },
-      ],
+      label: 'Our Story',
+      children: [],
     },
     {
-      label: 'Learn Design',
-      href: '#',
-    },
-    {
-      label: 'Hire Designers',
+      label: 'Services',
       href: '#',
     },
   ];
