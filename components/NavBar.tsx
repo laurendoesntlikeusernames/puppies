@@ -254,16 +254,15 @@ import {
   const NAV_ITEMS: Array<NavItem> = [
     {
       label: 'Home',
-      children: [
-        // {label: '', subLabel: '', href: '#',},
-      ],
+      href: '/',
     },
     {
       label: 'Our Story',
-      children: [],
+      href: '/Learn',
     },
     {
       label: 'Services',
-      href: '#',
+      href: '/Started',
     },
+
   ];
