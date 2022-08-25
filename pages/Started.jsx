@@ -1,15 +1,5 @@
 import React from 'react'
-import ClientForm from '../components/ClientForm'
-import {
-  Flex,
-  Container,
-  Heading,
-  Stack,
-  VStack,
-  Text,
-  Box,
-  Button,
-} from '@chakra-ui/react';
+import ContactForm from '../components/ClientForm'
 import NavBar from '../components/NavBar.tsx'
 
 
@@ -17,7 +7,7 @@ const Started = () => {
   return (
     <>
     <NavBar />
-    <ClientForm />
+    <ContactForm />
     </>
   )
 }

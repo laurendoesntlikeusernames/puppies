@@ -22,12 +22,36 @@ const ClientForm = () => {
           email: '',
         },
         onSubmit: (values) => {
-          alert(JSON.stringify(values, null, 2))
+          const { name, email, message } = event.target;
+          const endpoint = 'https://xaaz6znly1.execute-api.ap-southeast-2.amazonaws.com/Prod/submitForm'
+          const body = JSON.stringify({
+            senderName: firstName.value,
+            senderEmail: email.value,
+            message: petName.value
+          });
+          const requestOptions = {
+            method: "POST",
+            body
+          };
+          fetch(endpoint, requestOptions)
+          .then((response) => {
+            if (!response.ok) throw new Error("Error in fetch");
+            return response.json();
+          })
+          .then((response) => {
+            document.getElementById("result-text").innerText =
+              "Email sent successfully!";
+          })
+          .catch((error) => {
+            document.getElementById("result-text").innerText =
+              "An unkown error occured.";
+          });
+          
+          alert(JSON.stringify(values, null, 2))        
         },
   }) 
   return (
     <form onSubmit={formik.handleSubmit}>
-
     <Stack spacing={8} mx={'auto'} maxW={'3xl'} py={12} px={6}>
         <Stack align={'center'}>
         <Heading noOfLines={2}
@@ -87,12 +111,7 @@ const ClientForm = () => {
                   <Input type="text" />
                 </FormControl>
               </Box>
-   
-
             <Stack spacing={10} pt={2}>
-              
-          
-
               <Button
                   loadingText="Submitting"
                   size="md"
@@ -105,9 +124,9 @@ const ClientForm = () => {
                   >
                   Submit
               </Button>
-
-   
-            
+              <Box>
+               <p id="result-text"></p>
+              </Box>
             </Stack>
           </Stack>
         </Box>
