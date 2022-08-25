@@ -22,7 +22,8 @@ const ClientForm = () => {
           email: '',
         },
         onSubmit: (values) => {
-          const endpoint = 'https://xaaz6znly1.execute-api.ap-southeast-2.amazonaws.com/Prod/submitForm'
+          //const endpoint = 'https://xaaz6znly1.execute-api.ap-southeast-2.amazonaws.com/Prod/submitForm'
+          const endpoint = 'https://lsho6otfdl.execute-api.us-east-1.amazonaws.com/Prod/submitForm'
           const body = JSON.stringify({
             senderName: firstName.value,
             senderEmail: email.value,
