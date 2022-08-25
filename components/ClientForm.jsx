@@ -22,7 +22,6 @@ const ClientForm = () => {
           email: '',
         },
         onSubmit: (values) => {
-          const { name, email, message } = event.target;
           const endpoint = 'https://xaaz6znly1.execute-api.ap-southeast-2.amazonaws.com/Prod/submitForm'
           const body = JSON.stringify({
             senderName: firstName.value,
@@ -45,9 +44,7 @@ const ClientForm = () => {
           .catch((error) => {
             document.getElementById("result-text").innerText =
               "An unkown error occured.";
-          });
-          
-          alert(JSON.stringify(values, null, 2))        
+          });     
         },
   }) 
   return (
