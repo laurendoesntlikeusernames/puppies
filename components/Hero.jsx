@@ -29,8 +29,8 @@ const Hero = () => {
             from Perth
           </Text>
         </Heading>
-        <Text color={'gray.500'} maxW={'3xl'}>
-        It’s holiday time!! I’m so excited, I finally get to go away and have some much needed relaxation! But wait. What do I do with the pets? Who’s going to look after them with as much care and love as I do?
+        <Text color={'gray.500'} maxW={'2xl'}>
+        It’s holiday time!! I’m so excited, I finally get to go away and have some much needed relaxation! But wait. What do I do with the pets? Who’s going to look after them!?!
         </Text>
         <Stack spacing={6} direction={'row'}>
          <Link href="/Started">

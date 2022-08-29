@@ -22,12 +22,11 @@ const ClientForm = () => {
           email: '',
         },
         onSubmit: (values) => {
-          //const endpoint = 'https://xaaz6znly1.execute-api.ap-southeast-2.amazonaws.com/Prod/submitForm'
           const endpoint = 'https://lsho6otfdl.execute-api.us-east-1.amazonaws.com/Prod/submitForm'
           const body = JSON.stringify({
             senderName: firstName.value,
             senderEmail: email.value,
-            message: petName.value
+            message: petName.value,
           });
           const requestOptions = {
             method: "POST",
@@ -35,17 +34,14 @@ const ClientForm = () => {
           };
           fetch(endpoint, requestOptions)
           .then((response) => {
-            if (!response.ok) throw new Error("Error in fetch");
-            return response.json();
-          })
-          .then((response) => {
-            document.getElementById("result-text").innerText =
+            if(response.ok){
+              document.getElementById("result-text").innerText =
               "Email sent successfully!";
+              return
+            }
           })
-          .catch((error) => {
-            document.getElementById("result-text").innerText =
-              "An unkown error occured.";
-          });     
+          throw new Error('Something went wrong');
+    
         },
   }) 
   return (

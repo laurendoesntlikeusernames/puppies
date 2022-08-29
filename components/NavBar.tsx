@@ -54,13 +54,6 @@ import {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }} >
-            <Center>
-              <Image
-                boxSize='35px'
-                objectFit='cover'
-                src={'chihuahua200x200T.png'}
-              />
-            </Center>
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
