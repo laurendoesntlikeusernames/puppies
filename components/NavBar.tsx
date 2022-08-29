@@ -40,6 +40,7 @@ import {
           borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}>
           
+         {/*  The Hamburger */}
           <Flex
             flex={{ base: 1, md: 'auto' }}
             ml={{ base: -2 }}
@@ -53,6 +54,7 @@ import {
               aria-label={'Toggle Navigation'}
             />
           </Flex>
+
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }} >
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
@@ -63,11 +65,12 @@ import {
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
-            spacing={6}>
+            spacing={6}
+            >
             <Button
               as={'a'}
               fontSize={'sm'}
-              fontWeight={400}
+              fontWeight={700}
               variant={'link'}
               href={'#'}>
               Sign In
@@ -75,7 +78,7 @@ import {
             <Button
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
-              fontWeight={600}
+              fontWeight={700}
               color={'white'}
               bg={'pink.400'}
               _hover={{
@@ -108,7 +111,7 @@ import {
                   p={2}
                   href={navItem.href ?? '#'}
                   fontSize={'sm'}
-                  fontWeight={500}
+                  fontWeight={700}
                   color={linkColor}
                   _hover={{
                     textDecoration: 'none',
@@ -157,7 +160,7 @@ import {
               fontWeight={500}>
               {label}
             </Text>
-            <Text fontSize={'sm'}>{subLabel}</Text>
+            <Text fontSize={'sm'} fontWeight={600}>{subLabel}</Text>
           </Box>
           <Flex
             transition={'all .3s ease'}
@@ -191,6 +194,8 @@ import {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
+
+      /*Hamburger Dropdown*/
       <Stack spacing={4} onClick={children && onToggle}>
         <Flex
           py={2}

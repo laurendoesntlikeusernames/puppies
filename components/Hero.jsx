@@ -19,7 +19,7 @@ const Hero = () => {
         textAlign={'center'}
         align={'center'}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}>
+        py={{ base: 20, md: 20 }}>
         <Heading
           fontWeight={600}
           fontSize={{ base: '6xl', sm: '6xl', md: '6xl' }}
