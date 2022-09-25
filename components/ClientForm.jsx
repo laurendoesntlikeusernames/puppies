@@ -5,11 +5,11 @@ import {
   FormLabel,
   Input,
   Button,
-  useColorModeValue,
   Heading,
   Text,
   Box,
-  HStack,
+  Flex,
+  Grid,
 } from '@chakra-ui/react';
 import { useFormik } from "formik";
 
@@ -47,6 +47,7 @@ const ClientForm = () => {
   }) 
   return (
     <form onSubmit={formik.handleSubmit}>
+    
     <Stack spacing={8} mx={'auto'} maxW={'3xl'} py={12} px={6}>
         <Stack align={'center'}>
         <Heading noOfLines={2}
@@ -60,30 +61,35 @@ const ClientForm = () => {
             </Text>
         </Heading>
         </Stack>
-        <Box
-          rounded={'lg'}
-          boxShadow={'lg'}
-          p={8}>
-          <Stack spacing={4}>
-            <HStack>
-                <FormControl isRequired > 
-                  <FormLabel>Your First Name</FormLabel>
-                  <Input 
-                  id="firstName"
-                  type="text" 
-                  name="firstName"
-                  value={formik.values.firstName} onChange={formik.handleChange} />
-                </FormControl>
-                <FormControl isRequired>
-                  <FormLabel>Your Last Name</FormLabel>
-                  <Input 
-                  id="lastName"
-                  type="text" 
-                  name="lastName"
-                  value={formik.values.lastName} onChange={formik.handleChange} />
-                </FormControl>
-            </HStack>
+        
+<Box rounded={'lg'} boxShadow={'lg'}  p={1}>
+<Stack spacing={4}>
 
+<Grid gap={6}>
+    <Box>
+    <FormControl isRequired > 
+    <FormLabel>Your First Name</FormLabel>
+      <Input 
+      id="firstName"
+      type="text" 
+      name="firstName"
+      value={formik.values.firstName} onChange={formik.handleChange} 
+      w="100%"/>
+    </FormControl>
+    </Box>
+    <Box>
+    <FormControl isRequired>
+      <FormLabel>Your Last Name</FormLabel>
+      <Input 
+      id="lastName"
+      type="text" 
+      name="lastName"
+      value={formik.values.lastName} onChange={formik.handleChange} 
+      w="100%"/>
+    </FormControl>
+    </Box>
+</Grid>
+  
             <FormControl isRequired >
               <FormLabel>Email address</FormLabel>
               <Input 
@@ -101,19 +107,16 @@ const ClientForm = () => {
                   id="petName"
                   name="petName"
                   type="text" 
-                  value={formik.values.lastName} onChange={formik.handleChange}
+                  value={formik.values.petName} onChange={formik.handleChange}
                   />
                 </FormControl>
              </Box>
-            <Stack spacing={10} pt={2}>
+
+            <Stack spacing={9} pt={6}>
               <Button
                   loadingText="Submitting"
                   size="md"
-                  bg={'purple.400'}
-                  color={'white'}
-                  _hover={{
-                    bg: 'purple.500',
-                  }}
+                  colorScheme='purple' 
                   id='submit'
                   type='submit' 
                   value="Submit"
@@ -123,6 +126,7 @@ const ClientForm = () => {
               <Box>
                <Heading id="result-text"></Heading>
               </Box>
+
             </Stack>
           </Stack>
         </Box>
