@@ -62,13 +62,12 @@ const ClientForm = () => {
         </Stack>
         <Box
           rounded={'lg'}
-          bg={useColorModeValue('white', 'gray.800')}
           boxShadow={'lg'}
           p={8}>
           <Stack spacing={4}>
             <HStack>
                 <FormControl isRequired > 
-                  <FormLabel>Your Given Name</FormLabel>
+                  <FormLabel>Your First Name</FormLabel>
                   <Input 
                   id="firstName"
                   type="text" 
