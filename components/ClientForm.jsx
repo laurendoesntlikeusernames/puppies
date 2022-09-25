@@ -28,6 +28,7 @@ const ClientForm = () => {
             senderEmail: email.value,
             message: petName.value,
           });
+          formik.resetForm()
           const requestOptions = {
             method: "POST",
             body
@@ -41,8 +42,8 @@ const ClientForm = () => {
             }
           })
           throw new Error('Something went wrong');
-    
         },
+        
   }) 
   return (
     <form onSubmit={formik.handleSubmit}>
@@ -66,45 +67,45 @@ const ClientForm = () => {
           p={8}>
           <Stack spacing={4}>
             <HStack>
-        
-                <FormControl id="firstName" isRequired
-                  onChange={formik.handleChange}
-                  value={formik.values.firstName}>
-                  <FormLabel>Owner First Name</FormLabel>
-                  <Input type="text" />
+                <FormControl isRequired > 
+                  <FormLabel>Your Given Name</FormLabel>
+                  <Input 
+                  id="firstName"
+                  type="text" 
+                  name="firstName"
+                  value={formik.values.firstName} onChange={formik.handleChange} />
                 </FormControl>
-      
-                <FormControl 
-                id="lastName" isRequired
-                onChange={formik.handleChange}
-                value={formik.values.lastName}>
-                  <FormLabel>Owner Last Name</FormLabel>
-                  <Input type="text" />
+                <FormControl isRequired>
+                  <FormLabel>Your Last Name</FormLabel>
+                  <Input 
+                  id="lastName"
+                  type="text" 
+                  name="lastName"
+                  value={formik.values.lastName} onChange={formik.handleChange} />
                 </FormControl>
-             
             </HStack>
 
-            <FormControl 
-            isRequired
-            id='email'
-            name='email'
-            type='email'
-            onChange={formik.handleChange}
-            value={formik.values.email}
-            >
+            <FormControl isRequired >
               <FormLabel>Email address</FormLabel>
-              <Input type="email" />
+              <Input 
+              type="email" 
+              id='email'
+              name='email'
+              value={formik.values.email} onChange={formik.handleChange} />
             </FormControl>
 
            
-              <Box>
-                <FormControl id="petName" isRequired
-                  onChange={formik.handleChange}
-                  value={formik.values.lastName}>
-                  <FormLabel>Fur Baby Name</FormLabel>
-                  <Input type="text" />
+            <Box>
+                <FormControl isRequired >
+                  <FormLabel>Your Animal's Name</FormLabel>
+                  <Input 
+                  id="petName"
+                  name="petName"
+                  type="text" 
+                  value={formik.values.lastName} onChange={formik.handleChange}
+                  />
                 </FormControl>
-              </Box>
+             </Box>
             <Stack spacing={10} pt={2}>
               <Button
                   loadingText="Submitting"
@@ -114,12 +115,14 @@ const ClientForm = () => {
                   _hover={{
                     bg: 'purple.500',
                   }}
-                  type='submit'
+                  id='submit'
+                  type='submit' 
+                  value="Submit"
                   >
                   Submit
               </Button>
               <Box>
-               <p id="result-text"></p>
+               <Heading id="result-text"></Heading>
               </Box>
             </Stack>
           </Stack>

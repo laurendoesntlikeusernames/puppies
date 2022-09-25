@@ -3,7 +3,6 @@ import {
     Box,
     Flex,
     Text,
-    Image,
     IconButton,
     Button,
     Stack,
@@ -14,7 +13,6 @@ import {
     PopoverTrigger,
     PopoverContent,
     useColorModeValue,
-    Center,
     useDisclosure,
   } from '@chakra-ui/react'
   import {
@@ -76,6 +74,7 @@ import {
               Sign In
             </Button>
             <Button
+              as={'a'}
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
               fontWeight={700}
@@ -83,7 +82,9 @@ import {
               bg={'pink.400'}
               _hover={{
                 bg: 'pink.300',
-              }}>
+              }} 
+              href={'/sign-up'}
+             >
               Sign Up
             </Button>
           </Stack>
@@ -256,11 +257,11 @@ import {
     },
     {
       label: 'Our Story',
-      href: '/Learn',
+      href: '/learn',
     },
     {
       label: 'Get Started',
-      href: '/Started',
+      href: '/get-started',
     },
 
   ];

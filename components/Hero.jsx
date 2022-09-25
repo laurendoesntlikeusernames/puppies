@@ -33,7 +33,7 @@ const Hero = () => {
         It’s holiday time!! I’m so excited, I finally get to go away and have some much needed relaxation! But wait. What do I do with the pets? Who’s going to look after them!?!
         </Text>
         <Stack spacing={6} direction={'row'}>
-         <Link href="/Started">
+         <Link href="/get-started">
          <Button
             rounded={'full'}
             px={6}
