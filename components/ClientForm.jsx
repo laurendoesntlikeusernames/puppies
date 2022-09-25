@@ -97,7 +97,7 @@ const ClientForm = () => {
            
             <Box>
                 <FormControl isRequired >
-                  <FormLabel>Your Animal's Name</FormLabel>
+                  <FormLabel>Your Animal&apos;s Name</FormLabel>
                   <Input 
                   id="petName"
                   name="petName"
