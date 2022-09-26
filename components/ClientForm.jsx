@@ -9,6 +9,8 @@ import {
   Text,
   Box,
   Textarea,
+  Show, 
+  Hide,
 } from '@chakra-ui/react';
 import { useFormik } from "formik";
 import MuiDateRangePicker from './MuiDateRangePicker.jsx';
@@ -69,6 +71,10 @@ Enquiry
         
 <Box rounded={'lg'} boxShadow={'lg'}  p={1}>
 <Stack spacing={4}>
+
+<Show breakpoint='(max-width: 500px)'>
+  <Box>This text appears only on screens 600px and larger.</Box>
+</Show>
 
 <FormControl isRequired  > 
 <FormLabel>Your First Name</FormLabel>
