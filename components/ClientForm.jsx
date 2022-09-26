@@ -8,7 +8,6 @@ import {
   Heading,
   Text,
   Box,
-  Grid,
   Textarea,
 } from '@chakra-ui/react';
 import { useFormik } from "formik";
@@ -21,6 +20,7 @@ const ClientForm = () => {
           lastName: '',
           petName: '',
           email: '',
+          phoneNumber: '',
           startDate: '',
           endDate: '',
           message: '',
@@ -28,9 +28,9 @@ const ClientForm = () => {
         onSubmit: (values) => {
           const endpoint = 'https://lsho6otfdl.execute-api.us-east-1.amazonaws.com/Prod/submitForm'
           const body = JSON.stringify({
-            senderName: firstName.value,
-            senderEmail: email.value,
-            message: petName.value,
+            senderName: firstName.value + ' ' + lastName.value,
+            senderEmail: email.value + ' ' + phoneNumber.value,
+            message: petName.value + ' ' + startDate.value + ' ' + endDate.value + ' ' + message.value,
           });
           formik.resetForm()
           const requestOptions = {
@@ -99,6 +99,16 @@ name='email'
 value={formik.values.email} onChange={formik.handleChange} />
 </FormControl>
 
+<FormControl isRequired >
+<FormLabel>Mobile Phone Number</FormLabel>
+<Input 
+type="tel" 
+id='phoneNumber'
+name='phoneNumber'
+pattern='[0-9]{10}'
+value={formik.values.phoneNumber} onChange={formik.handleChange} />
+</FormControl>
+
 <FormControl isRequired>
   <FormLabel>Start Date</FormLabel>
   <Input 
@@ -161,8 +171,6 @@ Submit
 </Stack>
 </form>
    
-   
-  )
-}
+  )}
 
 export default ClientForm
