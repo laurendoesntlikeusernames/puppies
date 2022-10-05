@@ -151,6 +151,7 @@ value={formik.values.petName} onChange={formik.handleChange}
 id="message"
 name="message"
 type="text" 
+spellcheck="true"
 value={formik.values.message} onChange={formik.handleChange}
 />
 </FormControl>
