@@ -20,18 +20,19 @@ const Hero = () => {
         align={'center'}
         spacing={{ base: 8, md: 10 }}
         py={{ base: 15, md: 20 }}>
-        <Heading
-          fontWeight={600}
-          fontSize={{ base: '6xl', sm: '6xl', md: '6xl' }}
-          lineHeight={'110%'}>
-          The Puppy Sitters{' '}
-          <Text as={'span'} color={'orange.400'}>
-            from Perth
-          </Text>
-        </Heading>
-        <Text color={'gray.500'} maxW={'2xl'}>
-        It’s holiday time!! I’m so excited, I finally get to go away and have some much needed relaxation! But wait. What do I do with the pets? Who’s going to look after them!?!
+
+        <Stack align={'center'}>
+        <Heading noOfLines={2}
+        fontWeight={600}
+        fontSize={{ base: '6xl', sm: '6xl', md: '7xl' }}
+        lineHeight={'130%'}
+        textAlign="center">
+        The puppy sitters from <br />
+        <Text as={'span'} color={'orange.400'} fontSize={{ base: '7xl', sm: '7xl', md: '7xl' }}>
+        Perth
         </Text>
+        </Heading>
+        </Stack>
         <Stack spacing={6} direction={'row'}>
          <Link href="/get-started">
          <Button

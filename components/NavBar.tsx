@@ -252,15 +252,15 @@ import {
   
   const NAV_ITEMS: Array<NavItem> = [
     {
-      label: 'Home',
+      label: '',
       href: '/',
     },
     {
-      label: 'Our Story',
+      label: '',
       href: '/learn',
     },
     {
-      label: 'Get Started',
+      label: '',
       href: '/get-started',
     },
 

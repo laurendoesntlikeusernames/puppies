@@ -1,4 +1,3 @@
-import { FormEvent, ChangeEvent, useState } from 'react';
 import {
   Stack,
   FormControl,
@@ -13,7 +12,6 @@ import {
   Hide,
 } from '@chakra-ui/react';
 import { useFormik } from "formik";
-import MuiDateRangePicker from './MuiDateRangePicker.jsx';
 
 const ClientForm = () => {
     const formik = useFormik({
@@ -151,7 +149,7 @@ value={formik.values.petName} onChange={formik.handleChange}
 id="message"
 name="message"
 type="text" 
-spellcheck="true"
+spellCheck="true"
 value={formik.values.message} onChange={formik.handleChange}
 />
 </FormControl>
