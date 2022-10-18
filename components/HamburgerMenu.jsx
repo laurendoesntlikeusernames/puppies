@@ -2,6 +2,8 @@ import React from 'react'
 import {
     Box,
     Flex,
+    Link,
+    Stack,
     IconButton,
     Center,
     Collapse,
@@ -37,15 +39,41 @@ const HamburgerMenu = () => {
         </Flex>
         <Center>
            <Collapse in={isOpen}>
-                <Box bgColor={'red.100'}>
-                    Lolololo
-                </Box>
-                <Box bgColor={'green.100'}>
-                    Lolololo
-                </Box>
-                <Box bgColor={'yellow.100'}>
-                    Lolololo
-                </Box>
+              <Stack bg={'gray.800'} p={4} display={{ md: 'flex' }}>
+              <Stack
+                    mt={2}
+                    pl={4}
+                    borderLeft={1}
+                    borderStyle={'solid'}
+                    borderColor={'gray.100'}
+                    align={'start'}>
+                    <Link py={2} href={'#'}>
+                        Hello
+                    </Link>
+                </Stack>
+                <Stack
+                    mt={2}
+                    pl={4}
+                    borderLeft={1}
+                    borderStyle={'solid'}
+                    borderColor={'gray.100'}
+                    align={'start'}>
+                    <Link py={2} href={'#'}>
+                        Hello here I am again!
+                    </Link>
+                </Stack>
+                <Stack
+                    mt={2}
+                    pl={4}
+                    borderLeft={1}
+                    borderStyle={'solid'}
+                    borderColor={'gray.100'}
+                    align={'start'}>
+                    <Link py={2} href={'#'}>
+                        This is the best chicken I've ever tasted
+                    </Link>
+                </Stack>
+              </Stack>
             </Collapse>
         </Center>
     </Box>
