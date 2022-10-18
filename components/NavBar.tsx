@@ -42,7 +42,7 @@ import {
           <Flex
             flex={{ base: 1, md: 'auto' }}
             ml={{ base: -2 }}
-            display={{ base: 'flex', md: 'none' }}>
+            display={{ base: 'flex' }}>
             <IconButton
               onClick={onToggle}
               icon={
@@ -252,15 +252,15 @@ import {
   
   const NAV_ITEMS: Array<NavItem> = [
     {
-      label: '',
+      label: 'Home',
       href: '/',
     },
     {
-      label: '',
+      label: 'About PPS',
       href: '/learn',
     },
     {
-      label: '',
+      label: 'Make an Enquiry',
       href: '/get-started',
     },
 

@@ -1,12 +1,9 @@
 import React from 'react'
-import NavBar from '../components/NavBar.tsx'
-
+import HamburgerMenu from '../components/HamburgerMenu'
 
 const Learn = () => {
   return (
-    <>
-    <NavBar />
-    </>
+    <HamburgerMenu />
   )
 }
 

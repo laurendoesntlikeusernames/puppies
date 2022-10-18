@@ -1,5 +1,5 @@
-import { ChakraProvider } from '@chakra-ui/react'
 import Head from 'next/head'
+import { ChakraProvider } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 
 const config = {
