@@ -44,7 +44,7 @@ const Hero = () => {
             Get started
           </Button >
          </Link>
-          <Link href="/learn">
+          <Link href="/Learn">
             <Button rounded={'full'} px={6}>
               Learn more
             </Button>

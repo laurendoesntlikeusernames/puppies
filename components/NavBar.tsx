@@ -4,14 +4,10 @@ import {
     Flex,
     Text,
     IconButton,
-    Button,
     Stack,
     Collapse,
     Icon,
     Link,
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
     useColorModeValue,
     useDisclosure,
   } from '@chakra-ui/react'
@@ -19,7 +15,6 @@ import {
     HamburgerIcon,
     CloseIcon,
     ChevronDownIcon,
-    ChevronRightIcon,
   } from '@chakra-ui/icons'
   
   export default function NavBar() {
@@ -142,7 +137,7 @@ import {
     },
     {
       label: 'About PPS',
-      href: '/learn',
+      href: '/Learn',
     },
     {
       label: 'Make an Enquiry',
