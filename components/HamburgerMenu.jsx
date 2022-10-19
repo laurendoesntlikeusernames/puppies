@@ -1,4 +1,5 @@
 import React from 'react'
+import Hero from './Hero'
 import {
     Box,
     Flex,
@@ -8,8 +9,6 @@ import {
     Center,
     Collapse,
     useDisclosure,
-
-
 } from '@chakra-ui/react'
 import {
     HamburgerIcon,
@@ -37,35 +36,12 @@ const HamburgerMenu = () => {
               aria-label={'Toggle Navigation'}
             />
         </Flex>
-        <Center>
+        <Center pos="fixed" w="100%" zIndex={2} bg={'pink.900'}>
            <Collapse in={isOpen}>
-              <Stack bg={'gray.800'} p={4} display={{ md: 'flex' }}>
-              <Stack
-                    mt={2}
-                    pl={4}
-                    borderLeft={1}
-                    borderStyle={'solid'}
-                    borderColor={'gray.100'}
-                    align={'start'}>
-                    <Link py={2} href={'#'}>
-                        Hello
-                    </Link>
-                </Stack>
+            <Stack bg={'gray.800'} p={4} display={{ md: 'flex' }}>
                 <Stack
                     mt={2}
                     pl={4}
-                    borderLeft={1}
-                    borderStyle={'solid'}
-                    borderColor={'gray.100'}
-                    align={'start'}>
-                    <Link py={2} href={'#'}>
-                        Hello here I am again!
-                    </Link>
-                </Stack>
-                <Stack
-                    mt={2}
-                    pl={4}
-                    borderLeft={1}
                     borderStyle={'solid'}
                     borderColor={'gray.100'}
                     align={'start'}>
@@ -76,6 +52,7 @@ const HamburgerMenu = () => {
               </Stack>
             </Collapse>
         </Center>
+    <Hero />
     </Box>
   )
 }
