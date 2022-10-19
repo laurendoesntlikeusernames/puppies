@@ -1,5 +1,5 @@
 import React from 'react'
-import HamburgerMenu from '../components/HamburgerMenu'
+import HamburgerMenu from '../components/HamburgerMenu.tsx'
 
 const Learn = () => {
   return (

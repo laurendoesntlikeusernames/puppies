@@ -4,6 +4,7 @@ import {
     Box,
     Flex,
     Link,
+    Icon,
     Stack,
     IconButton,
     Center,
@@ -15,7 +16,7 @@ import {
     CloseIcon,
   } from '@chakra-ui/icons'
 
-const HamburgerMenu = () => {
+export default function HamburgerMenu(){
     const { isOpen, onToggle } = useDisclosure();
   return (
     <Box>
@@ -27,10 +28,12 @@ const HamburgerMenu = () => {
           borderStyle={'solid'}
           borderColor={'gray.700'}
           justifyContent={'center'}>
+
+            
             <IconButton
               onClick={onToggle}
               icon={
-                isOpen ? <CloseIcon w={5} h={5} /> : <HamburgerIcon w={7} h={7} />
+                isOpen ? <CloseIcon boxSize={12}  /> : <HamburgerIcon boxSize={16}  />
               }
               variant={'ghost'}
               aria-label={'Toggle Navigation'}
@@ -57,4 +60,44 @@ const HamburgerMenu = () => {
   )
 }
 
-export default HamburgerMenu
+const HamburgerStack = () => {
+    return (
+        <Stack
+          bg={'gray.800'}
+          p={4}
+          display={{ md: 'flex' }}>
+          {NAV_ITEMS.map((navItem) => (
+            <HamburgerItems key={navItem.label} {...navItem} />
+          ))}
+        </Stack>
+      );
+}
+
+const HamburgerItems = ({ label, children, href }: NavItem) => {
+  const { isOpen, onToggle } = useDisclosure();
+  return (
+    <></>
+  )
+}
+
+interface NavItem {
+    label: string;
+    subLabel?: string;
+    children?: Array<NavItem>;
+    href?: string;
+  }
+
+  const NAV_ITEMS: Array<NavItem> = [
+    {
+      label: 'Home',
+      href: '/',
+    },
+    {
+      label: 'About PPS',
+      href: '/Learn',
+    },
+    {
+      label: 'Make an Enquiry',
+      href: '/get-started',
+    },];
+
