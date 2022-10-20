@@ -9,6 +9,7 @@ import {
     IconButton,
     Center,
     Collapse,
+    Heading,
     useDisclosure,
 } from '@chakra-ui/react'
 import {
@@ -30,7 +31,10 @@ export default function HamburgerMenu(){
           justifyContent={'center'}>
 
             
-            <IconButton
+            <IconButton 
+              _hover={{bg:'gray.800'}}
+              _active={{bg:'gray.800'}}
+              _focus={{bg:'gray.800'}}
               onClick={onToggle}
               icon={
                 isOpen ? <CloseIcon boxSize={12}  /> : <HamburgerIcon boxSize={16}  />
@@ -39,7 +43,9 @@ export default function HamburgerMenu(){
               aria-label={'Toggle Navigation'}
             />
         </Flex>
-        <Center pos="fixed" w="100%" zIndex={2} bg={'pink.900'}>
+        <Center pos="fixed" w="100%" zIndex={2} bg={'gray.800'} borderBottom={1}
+          borderStyle={'solid'}
+          borderColor={'gray.700'}>
            <Collapse in={isOpen}>
             <Stack bg={'gray.800'} p={4} display={{ md: 'flex' }}>
                 <Stack
@@ -49,7 +55,7 @@ export default function HamburgerMenu(){
                     borderColor={'gray.100'}
                     align={'start'}>
                     <Link py={2} href={'#'}>
-                        This is the best chicken I've ever tasted
+                      <Heading size='lg'>This is the best chicken I've ever tasted!</Heading>
                     </Link>
                 </Stack>
               </Stack>
