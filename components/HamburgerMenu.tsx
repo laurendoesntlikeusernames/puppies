@@ -1,5 +1,4 @@
 import React from 'react'
-import Hero from './Hero'
 import {
     Box,
     Flex,
@@ -45,7 +44,6 @@ export default function HamburgerMenu({ label, children, href }: NavItem){
             <MobileNav />
           </Collapse>
         </Center>
-     <Hero />
     </Box>
   )
 }
