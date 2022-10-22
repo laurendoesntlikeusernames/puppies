@@ -1,12 +1,12 @@
 import React from 'react'
 import ClientForm from '../components/ClientForm'
-import NavBar from '../components/NavBar.tsx'
+import HamburgerMenu from '../components/HamburgerMenu.tsx'
 
 
 const Started = () => {
   return (
     <>
-    <NavBar />
+    <HamburgerMenu />
     <ClientForm />
     </>
   )
