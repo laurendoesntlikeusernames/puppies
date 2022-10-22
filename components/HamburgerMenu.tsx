@@ -17,8 +17,8 @@ import {
     CloseIcon,
   } from '@chakra-ui/icons'
 
-export default function HamburgerMenu(){
-    const { isOpen, onToggle } = useDisclosure();
+export default function HamburgerMenu({ label, children, href }: NavItem){
+    const { isOpen, onToggle } = useDisclosure();    
   return (
     <Box>
         <Flex
@@ -28,82 +28,98 @@ export default function HamburgerMenu(){
           borderBottom={1}
           borderStyle={'solid'}
           borderColor={'gray.700'}
-          justifyContent={'center'}>
-
-            
-            <IconButton 
-              _hover={{bg:'gray.800'}}
-              _active={{bg:'gray.800'}}
-              _focus={{bg:'gray.800'}}
-              onClick={onToggle}
-              icon={
-                isOpen ? <CloseIcon boxSize={12}  /> : <HamburgerIcon boxSize={16}  />
-              }
-              variant={'ghost'}
-              aria-label={'Toggle Navigation'}
-            />
+          justifyContent={'center'}>  
+          <IconButton 
+            _hover={{bg:'gray.800'}}
+            _active={{bg:'gray.800'}}
+            _focus={{bg:'gray.800'}}
+            onClick={onToggle}
+            icon={
+              isOpen ? <CloseIcon boxSize={12}  /> : <HamburgerIcon boxSize={16}  />
+            }
+            variant={'ghost'}
+            aria-label={'Toggle Navigation'}/>
         </Flex>
-        <Center pos="fixed" w="100%" zIndex={2} bg={'gray.800'} borderBottom={1}
-          borderStyle={'solid'}
-          borderColor={'gray.700'}>
-           <Collapse in={isOpen}>
-            <Stack bg={'gray.800'} p={4} display={{ md: 'flex' }}>
-                <Stack
-                    mt={2}
-                    pl={4}
-                    borderStyle={'solid'}
-                    borderColor={'gray.100'}
-                    align={'start'}>
-                    <Link py={2} href={'#'}>
-                      <Heading size='lg'>This is the best chicken I've ever tasted!</Heading>
-                    </Link>
-                </Stack>
-              </Stack>
-            </Collapse>
+        <Center pos="fixed" w="100%" zIndex={2} bg={'gray.800'} >
+          <Collapse in={isOpen}>
+            <MobileNav />
+          </Collapse>
         </Center>
-    <Hero />
+     <Hero />
     </Box>
   )
 }
 
-const HamburgerStack = () => {
-    return (
-        <Stack
-          bg={'gray.800'}
-          p={4}
-          display={{ md: 'flex' }}>
-          {NAV_ITEMS.map((navItem) => (
-            <HamburgerItems key={navItem.label} {...navItem} />
-          ))}
-        </Stack>
-      );
-}
-
-const HamburgerItems = ({ label, children, href }: NavItem) => {
-  const { isOpen, onToggle } = useDisclosure();
+const MobileNav = () => {
   return (
-    <></>
-  )
-}
+    <Stack
+    bg={'gray.800'} p={4} display={{ md: 'flex' }}>
+      {NAV_ITEMS.map((navItem) => (
+        <MobileNavItem key={navItem.label} {...navItem} />
+      ))}
+    </Stack>
+  );
+};
+
+const MobileNavItem = ({ label, children, href }: NavItem) => {
+  const { isOpen, onToggle } = useDisclosure();
+
+  return (
+    <Stack  bg={'gray.800'}spacing={4} onClick={children && onToggle}>
+      <Flex py={2} as={Link} href={href ?? '#'} justify={'center'} align={'center'} _hover={{ textDecoration: 'none',}}>
+        <Heading size='lg' bg={'gray.800'}>
+          {label}
+        </Heading>
+        {children && (
+          <Icon
+            as={ChevronDownIcon}
+            transition={'all .25s ease-in-out'}
+            transform={isOpen ? 'rotate(180deg)' : ''}
+            w={6}
+            h={6}
+          />
+        )}
+      </Flex>
+
+      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
+        <Stack
+          mt={2}
+          pl={4}
+          borderLeft={1}
+          borderStyle={'solid'}
+          borderColor={'gray.200'}
+          align={'start'}>
+          {children &&
+            children.map((child) => (
+              <Link key={child.label} py={2} href={child.href}>
+                {child.label}
+              </Link>
+            ))}
+        </Stack>
+      </Collapse>
+    </Stack>
+  );
+};
 
 interface NavItem {
-    label: string;
-    subLabel?: string;
-    children?: Array<NavItem>;
-    href?: string;
-  }
+  label: string;
+  subLabel?: string;
+  children?: Array<NavItem>;
+  href?: string;
+}
 
-  const NAV_ITEMS: Array<NavItem> = [
-    {
-      label: 'Home',
-      href: '/',
-    },
-    {
-      label: 'About PPS',
-      href: '/Learn',
-    },
-    {
-      label: 'Make an Enquiry',
-      href: '/get-started',
-    },];
+const NAV_ITEMS: Array<NavItem> = [
+  {
+    label: 'HOME',
+    href: '/',
+  },
+  {
+    label: 'ABOUT',
+    href: '/Learn',
+  },
+  {
+    label: 'CONTACT US',
+    href: '/get-started',
+  },
 
+];
