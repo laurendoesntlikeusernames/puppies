@@ -25,6 +25,7 @@ const Hero = () => {
         <Heading noOfLines={2}
         fontWeight={600}
         fontSize={{ base: '6xl', sm: '6xl', md: '7xl' }}
+        marginTop={{base: '50', sm: '200', md: '100'}}
         lineHeight={'130%'}
         textAlign="center">
         The puppy sitters from <br />
