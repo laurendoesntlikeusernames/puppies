@@ -56,7 +56,7 @@ const ClientForm = () => {
 <Stack
  mx={'auto'} maxW={'3xl'} 
  spacing={{ base: 8, md: 10 }}
- py={{ base: 15, md: 20 }}
+ py={{ base: 20, md: 20 }}
 >
 
 <Stack align={'center'}>
@@ -75,7 +75,7 @@ Enquiry
 
 </Stack>
         
-<Box rounded={'lg'} boxShadow={'lg'}  p={1}>
+<Box rounded={'lg'} boxShadow={'lg'}  px={{base:'20', sm: '10', md: '30', lg:'40',}}>
 <Stack spacing={4}>
 
 <Show breakpoint='(max-width: 500px)'>
