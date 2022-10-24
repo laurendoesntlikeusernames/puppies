@@ -12,6 +12,7 @@ import {
     useDisclosure,
 } from '@chakra-ui/react'
 import {
+    ChevronDownIcon,
     HamburgerIcon,
     CloseIcon,
   } from '@chakra-ui/icons'
@@ -20,30 +21,25 @@ export default function HamburgerMenu({ label, children, href }: NavItem){
     const { isOpen, onToggle } = useDisclosure();    
   return (
     <Box>
-        <Flex
-          minH={'60px'}
-          py={{ base: 2 }}
-          px={{ base: 4 }}
-          borderBottom={1}
-          borderStyle={'solid'}
-          borderColor={'gray.700'}
-          justifyContent={'center'}>  
-          <IconButton 
-            _hover={{bg:'gray.800'}}
-            _active={{bg:'gray.800'}}
-            _focus={{bg:'gray.800'}}
-            onClick={onToggle}
-            icon={
-              isOpen ? <CloseIcon boxSize={12}  /> : <HamburgerIcon boxSize={16}  />
-            }
-            variant={'ghost'}
-            aria-label={'Toggle Navigation'}/>
-        </Flex>
-        <Center pos="fixed" w="100%" zIndex={2} bg={'gray.800'} >
-          <Collapse in={isOpen}>
-            <MobileNav />
-          </Collapse>
+      <Stack>
+        <Center pos="fixed" w="100%" zIndex={2} bg={'gray.800'} p='3'>
+        <IconButton 
+          _hover={{bg:'gray.800'}}
+          _active={{bg:'gray.800'}}
+          _focus={{bg:'gray.800'}}
+          onClick={onToggle}
+          icon={
+            isOpen ? <CloseIcon boxSize={12}  /> : <HamburgerIcon boxSize={16}  />
+          }
+          variant={'ghost'}
+          aria-label={'Toggle Navigation'}/>
         </Center>
+        <Center pos="fixed" w="100%" zIndex={2} bg={'gray.800'} top='14'>
+        <Collapse in={isOpen}>
+          <MobileNav />
+        </Collapse>
+        </Center>
+      </Stack>
     </Box>
   )
 }
@@ -63,9 +59,9 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Stack  bg={'gray.800'}spacing={4} onClick={children && onToggle}>
+    <Stack  bg={'gray.800'}spacing={4} onClick={children && onToggle} >
       <Flex py={2} as={Link} href={href ?? '#'} justify={'center'} align={'center'} _hover={{ textDecoration: 'none',}}>
-        <Heading size='lg' bg={'gray.800'}>
+        <Heading size='lg' bg={'gray.800'} py='2' px='10' border='1px' borderColor='gray.200'>
           {label}
         </Heading>
         {children && (
