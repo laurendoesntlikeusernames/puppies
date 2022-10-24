@@ -53,18 +53,26 @@ const ClientForm = () => {
 
 <form onSubmit={formik.handleSubmit}>
 
-<Stack spacing={8} mx={'auto'} maxW={'3xl'} py={12} px={6}>
+<Stack
+ mx={'auto'} maxW={'3xl'} 
+ spacing={{ base: 8, md: 10 }}
+ py={{ base: 15, md: 20 }}
+>
+
 <Stack align={'center'}>
 <Heading noOfLines={2}
-fontWeight={600}
-fontSize={'6xl'}
-lineHeight={'110%'}
-textAlign="center">
+        fontWeight={600}
+        fontSize={{ base: '6xl', sm: '6xl', md: '7xl' }}
+        marginTop={{base: '60px'}}
+        lineHeight={'130%'}
+        textAlign="center">
 Send us an Initial <br />
-<Text as={'span'} color={'green.500'} >
+
+<Text as={'span'} color={'pink.500'} >
 Enquiry
 </Text>
 </Heading>
+
 </Stack>
         
 <Box rounded={'lg'} boxShadow={'lg'}  p={1}>
