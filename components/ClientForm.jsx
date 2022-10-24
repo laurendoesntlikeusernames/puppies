@@ -75,7 +75,7 @@ Enquiry
 
 </Stack>
         
-<Box rounded={'lg'} boxShadow={'lg'}  px={{base:'20', sm: '10', md: '30', lg:'40',}}>
+<Box rounded={'lg'} boxShadow={'lg'}  px={{base:'10', sm: '10', md: '30', lg:'40',}}>
 <Stack spacing={4}>
 
 <Show breakpoint='(max-width: 500px)'>
